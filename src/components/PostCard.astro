@@ -25,7 +25,7 @@ const { post, isSticky = false } = Astro.props;
         <div class="absolute top-3 right-3 text-yellow-600 text-lg">📌</div>
       )
     }
-    <CardHeader>
+    <CardHeader className={isSticky ? "pr-10" : ""}>
       <CardTitle
         className="group-hover:text-violet-400 transition-colors text-xl"
       >
