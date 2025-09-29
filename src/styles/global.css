@@ -127,7 +127,7 @@
     @apply transition-all duration-200 ease-in-out hover:scale-110 hover:!text-violet-400;
   }
 
-  .prose code {
+  .prose :not(pre) > code {
     white-space: pre-wrap;
     word-break: break-word;
   }
