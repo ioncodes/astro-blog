@@ -1,16 +1,23 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
+import Navbar from "@/components/Navbar.tsx";
 const { content } = Astro.props;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{content.title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{content.title}</title>
+  </head>
+  <body>
+    <Navbar client:load />
+    <div
+      class="max-w-4xl mx-auto px-4 py-8 prose prose-invert prose-a:text-primary"
+    >
+      <h1 class="text-4xl font-bold mb-6">{content.title}</h1>
+      <slot />
+    </div>
+  </body>
 </html>
