@@ -5,6 +5,7 @@ summary: "One of the first things I ever wanted to implement was an import hooki
 tags: ["lifting", "c++", "revng", "llvm"]
 date: 2021-08-23T06:59:00Z
 sticky: false
+layout: ../../layouts/main.astro
 ---
 
 

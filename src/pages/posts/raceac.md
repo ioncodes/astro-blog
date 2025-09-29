@@ -5,6 +5,7 @@ summary: "In an attempt to stop people from cheating by modifying game files, De
 tags: ["reverse-engineering", "c++", "game-hacking", "anti-cheat"]
 date: 2021-06-03T22:00:00Z
 sticky: true
+layout: ../../layouts/main.astro
 ---
 
 

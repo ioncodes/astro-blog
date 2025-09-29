@@ -5,6 +5,7 @@ summary: "This post will guide you through my set up and we'll explore what work
 tags: ["llvm", "lifting", "mcsema"]
 date: 2021-07-24T22:00:00Z
 sticky: false
+layout: ../../layouts/main.astro
 ---
 
 

@@ -5,6 +5,7 @@ summary: "I was approached by \"The Research Realm\" - a collective aiming to pr
 tags: ["reverse-engineering", "drm", "lego"]
 date: 2025-04-28T18:00:00Z
 sticky: true
+layout: ../../layouts/main.astro
 ---
 
 

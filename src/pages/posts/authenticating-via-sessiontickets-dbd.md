@@ -5,6 +5,7 @@ summary: "In this post we'll be looking into grabbing a valid bhvrSession cookie
 tags: ["game-hacking", "man-in-the-middle", "steam"]
 date: 2023-05-08T08:00:00Z
 sticky: true
+layout: ../../layouts/main.astro
 ---
 
 
