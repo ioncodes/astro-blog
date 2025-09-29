@@ -5,7 +5,6 @@ summary: "Have you ever wondered how you can set up LLVM using CMake? It's actua
 tags: ["llvm", "c++", "cmake"]
 date: 2021-08-22T22:00:00Z
 sticky: false
-layout: ../../layouts/main.astro
 ---
 
 

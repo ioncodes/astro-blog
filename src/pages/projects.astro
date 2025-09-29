@@ -10,61 +10,9 @@ import {
 import { Badge } from "@/components/ui/badge.tsx";
 import Footer from "@/components/Footer.astro";
 import ThemeScript from "@/components/ThemeScript.astro";
+import { getCollection } from 'astro:content';
 
-const projects = [
-  {
-    name: "ayyboy-advance",
-    description:
-      "A GameBoy Advance emulator with an elaborate CPU and GPU debugger as well as Rhai scripting support.",
-    language: "Rust",
-    category: "Emulation",
-    image: "/projects/ayyboy-advance.png",
-    url: "https://github.com/ioncodes/ayyboy-advance",
-  },
-  {
-    name: "ayyboy",
-    description:
-      "A classic GameBoy (DMG) and GameBoy Color (GBC) emulator including a basic debugger.",
-    language: "Rust",
-    category: "Emulation",
-    image: "/projects/ayyboy.png",
-    url: "https://github.com/ioncodes/ayyboy",
-  },
-  {
-    name: "gg",
-    description:
-      "A GameGear and partial Sega Master System emulator with a built-in debugger.",
-    language: "Rust",
-    category: "Emulation",
-    image: "/projects/gg.png",
-    url: "https://github.com/ioncodes/gg",
-  },
-  {
-    name: "ceload",
-    description:
-      "A Bring Your Own Vulnerable Driver tool that allows you to load dbg64.sys and access a plethora of privileged functions.",
-    language: "C++",
-    category: "Research",
-    image: "/projects/ceload.png",
-    url: "https://github.com/ioncodes/ceload",
-  },
-  {
-    name: "idacode",
-    description:
-      "An integration for HexRay's IDA and VS Code which connects both to easily execute and debug IDAPython scripts.",
-    language: "Python & TypeScript",
-    category: "Research",
-    url: "https://github.com/ioncodes/idacode",
-  },
-  {
-    name: "SilentLoad",
-    description:
-      "Loads a driver through NtLoadDriver by setting up the service registry key directly. To be used in engagement for BYOVD, where service creation creates an alert.",
-    language: "C++",
-    category: "Research",
-    url: "https://github.com/ioncodes/SilentLoad",
-  },
-];
+const projects = await getCollection('projects');
 ---
 
 <html lang="en">
@@ -109,7 +57,7 @@ const projects = [
         {
           projects.map((project) => (
             <a
-              href={project.url}
+              href={project.data.url}
               target="_blank"
               rel="noopener noreferrer"
               class="block group"
@@ -119,21 +67,21 @@ const projects = [
                   <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
                     <div class="flex-1">
                       <CardTitle className="group-hover:text-violet-400 transition-colors text-xl mb-2">
-                        {project.name}
+                        {project.data.name}
                       </CardTitle>
                       <CardDescription className="mb-3">
-                        {project.description}
+                        {project.data.description}
                       </CardDescription>
                       <div class="flex flex-wrap gap-2">
-                        <Badge variant="outline">{project.language}</Badge>
-                        <Badge variant="outline">{project.category}</Badge>
+                        <Badge variant="outline">{project.data.language}</Badge>
+                        <Badge variant="outline">{project.data.category}</Badge>
                       </div>
                     </div>
-                    {project.image !== undefined && (
+                    {project.data.image !== undefined && (
                       <div class="flex-shrink-0 sm:self-start">
                         <img
-                          src={project.image}
-                          alt={`${project.name} image`}
+                          src={project.data.image}
+                          alt={`${project.data.name} image`}
                           class="w-full sm:w-24 sm:h-24 h-32 object-cover rounded-md"
                         />
                       </div>
