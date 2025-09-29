@@ -1,7 +1,5 @@
 ---
 author: "Layle"
-slug: "raceac"
-aliases: ["/raceac"]
 title: "RACEAC: Breaking Dead by Daylight's Integrity Checks"
 summary: "In an attempt to stop people from cheating by modifying game files, Dead by Daylight received an update that introduced integrity checks for the pak files/assets. Cheating was no longer possible. Unless…?"
 tags: ["reverse-engineering", "c++", "game-hacking", "anti-cheat"]

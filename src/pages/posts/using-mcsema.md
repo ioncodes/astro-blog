@@ -1,7 +1,5 @@
 ---
 author: "Layle"
-slug: "using-mcsema"
-aliases: ["/using-mcsema"]
 title: "Lifting Binaries to LLVM with McSema"
 summary: "This post will guide you through my set up and we'll explore what worked and what didn't (maybe it works for you!)."
 tags: ["llvm", "lifting", "mcsema"]
