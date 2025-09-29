@@ -20,11 +20,11 @@ const { post, isSticky = false } = Astro.props;
   <Card
     className="transition-all duration-200 hover:shadow-lg hover:scale-[1.02] cursor-pointer relative"
   >
-    {isSticky && (
-      <div class="absolute top-3 right-3 text-yellow-600 text-lg">
-        📌
-      </div>
-    )}
+    {
+      isSticky && (
+        <div class="absolute top-3 right-3 text-yellow-600 text-lg">📌</div>
+      )
+    }
     <CardHeader>
       <CardTitle
         className="group-hover:text-violet-600 transition-colors text-xl"

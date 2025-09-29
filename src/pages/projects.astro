@@ -1,0 +1,145 @@
+---
+import "../styles/global.css";
+import Navbar from "@/components/Navbar.tsx";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card.tsx";
+import { Badge } from "@/components/ui/badge.tsx";
+
+const projects = [
+  {
+    name: "ayyboy-advance",
+    description:
+      "A GameBoy Advance emulator with an elaborate CPU and GPU debugger as well as Rhai scripting support.",
+    language: "Rust",
+    category: "Emulation",
+    image: "/projects/ayyboy-advance.png",
+    url: "https://github.com/ioncodes/ayyboy-advance",
+  },
+  {
+    name: "ayyboy",
+    description:
+      "A classic GameBoy (DMG) and GameBoy Color (GBC) emulator including a basic debugger.",
+    language: "Rust",
+    category: "Emulation",
+    image: "/projects/ayyboy.png",
+    url: "https://github.com/ioncodes/ayyboy",
+  },
+  {
+    name: "gg",
+    description:
+      "A GameGear and partial Sega Master System emulator with a built-in debugger.",
+    language: "Rust",
+    category: "Emulation",
+    image: "/projects/gg.png",
+    url: "https://github.com/ioncodes/gg",
+  },
+  {
+    name: "ceload",
+    description:
+      "A BYOVD tool that allows you to load dbg64.sys and access a plethora of privileged functions.",
+    language: "C++",
+    category: "Research",
+    image: "/projects/ceload.png",
+    url: "https://github.com/ioncodes/ceload",
+  },
+  {
+    name: "idacode",
+    description:
+      "An integration for HexRay's IDA and VS Code which connects both to easily execute and debug IDAPython scripts.",
+    language: "Python & TypeScript",
+    category: "Research",
+    url: "https://github.com/ioncodes/idacode",
+  },
+  {
+    name: "SilentLoad",
+    description:
+      "Loads a drivers through NtLoadDriver by setting up the service registry key directly. To be used in engagement for BYOVD, where service creation creates an alert.",
+    language: "C++",
+    category: "Research",
+    url: "https://github.com/ioncodes/SilentLoad",
+  },
+];
+---
+
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Projects - Layle's Lair</title>
+  </head>
+
+  <body>
+    <Navbar client:load />
+
+    <div class="max-w-4xl mx-auto px-4 py-8">
+      <h1 class="text-4xl font-bold mb-6">Projects</h1>
+      <p class="text-lg text-muted-foreground mb-12">
+        Here you can find a selection of my open-source projects. These are
+        usually related to reverse engineering, emulation or security research.
+      </p>
+
+      <div class="grid grid-cols-1 gap-4">
+        {
+          projects.map((project) => (
+            <a href={project.url} class="block group">
+              <Card className="transition-all duration-200 hover:shadow-lg hover:scale-[1.02] cursor-pointer relative">
+                <CardHeader>
+                  <CardTitle className="group-hover:text-violet-600 transition-colors text-xl">
+                    {project.name}
+                  </CardTitle>
+                  <CardDescription>{project.description}</CardDescription>
+                  <CardDescription>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                      <Badge variant="outline">{project.language}</Badge>
+                      <Badge variant="outline">{project.category}</Badge>
+                    </div>
+                  </CardDescription>
+                  {project.image !== undefined && (
+                    <CardDescription>
+                      <img
+                        src={project.image}
+                        alt={`${project.name} image`}
+                        class="w-full h-32 object-cover mt-4 rounded-md"
+                      />
+                    </CardDescription>
+                  )}
+                </CardHeader>
+              </Card>
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="mt-12 text-center">
+        <a
+          href="https://github.com/ioncodes"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-5 h-5"
+          >
+            <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+            ></path>
+          </svg>
+          View all projects on GitHub
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
