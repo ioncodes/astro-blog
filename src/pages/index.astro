@@ -24,9 +24,6 @@ const sortByDate = (a: any, b: any) => {
 
 const sortedStickyPosts = stickyPosts.sort(sortByDate);
 const sortedNonStickyPosts = nonStickyPosts.sort(sortByDate);
-
-const emojis = ["👹", "👺", "👻", "💣", "🧠", "👀", "🐙", "🐧", "🥑"];
-const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
 ---
 
 <html lang="en">
@@ -48,7 +45,7 @@ const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
         <p class="text-lg text-muted-foreground flex-1">
           This is my personal blog where you'll find me rambling about all sorts
           of topics. I usually talk about reverse engineering, security research
-          and emulators. Enjoy your stay! {randomEmoji}
+          and emulators. Enjoy your stay! <span id="random-emoji"></span>
         </p>
         <div class="flex-shrink-0">
           <ProfileAvatar client:load />
@@ -167,5 +164,11 @@ const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
     </div>
 
     <Footer />
+
+    <script>
+      const emojis = ["👹", "👺", "👻", "💣", "🧠", "👀", "🐙", "🐧", "🥑"];
+      const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+      document.getElementById('random-emoji')!.textContent = randomEmoji;
+    </script>
   </body>
 </html>
