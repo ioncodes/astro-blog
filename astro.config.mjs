@@ -10,6 +10,10 @@ export default defineConfig({
   vite: {
       plugins: [tailwindcss()],
   },
-
   integrations: [react()],
+  markdown: {
+    shikiConfig: {
+      theme: 'material-theme-darker',
+    }
+  }
 });

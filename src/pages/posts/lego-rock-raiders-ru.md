@@ -299,7 +299,7 @@ Let's have a look at the disassembly, in particular the basic block right before
 
 Notice the following sequence:
 
-```x86asm
+```asm
 mov edx, 4386FAh
 push edx
 ; ...
@@ -308,7 +308,7 @@ retn
 
 As we know, a `ret` pops from the stack and jumps to that location. IDA isn't able to deduce this and ends up not displaying the rest of the code. I didn't do this personally, but you could technically patch out these sequences with NOP slides which would restore the decompilation like so:
 
-```x86asm
+```asm
 .text:004386E5 | pop     esi
 .text:004386E6 | nop
 .text:004386E7 | nop
@@ -430,7 +430,7 @@ Since I was patching the binary to invert the check and that exhibited the same 
 
 It takes a while, but eventually the debugger will break at the following location:
 
-```x86asm
+```asm
 004781FB | 33C0        | xor eax,eax                 
 004781FD | 0306        | add eax,dword ptr ds:[esi]       ; breakpoint triggered here, add DWORD at esi to checksum (eax)
 004781FF | 46          | inc esi                          ; increment address
@@ -632,7 +632,7 @@ The `SetTimer` call basically sets up a timer that periodically (1000ms = 1 seco
 ## Fail #2
 Can you see that `debugthing`? Amazing name, I know. My ADHD brain took over as I wanted to know where it's used, mostly out of curiosity, and was able to trace it up until the very same function that handles the upgrade base / subtract rocks logic:
 
-```x86asm
+```asm
 .text:004386A3 | mov     eax, [ebp+0Ch]    ; debugthing ends up here
 .text:004386A6 | test    eax, eax
 .text:004386A8 | jnz     short loc_4386B7
@@ -832,7 +832,7 @@ With the debugger attached, the VEH meme removed, and the checksum patches reapp
 ## Fighting the DRM - Part 2
 I used the same approach as earlier to create memory read breakpoints in the debugger, but placed it on `ProgressiveDecompress_24` this time. That immediately revealed more integrity/checksum checks:
 
-```x86asm
+```asm
 004386DF | 0306 | add eax,dword ptr ds:[esi]
 004798CA | 0306 | add eax,dword ptr ds:[esi]
 ```

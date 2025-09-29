@@ -190,7 +190,7 @@ CURLcode Curl_setopt(struct Curl_easy *data, CURLoption option,
 
 The possibilities are endless. We have a lot of inlined constants and a lot of string references at our disposal to find the function in memory. The function starts with the following assembly:
 
-```x86asm
+```asm
 mov qword ptr ss:[rsp+8],rbx
 mov qword ptr ss:[rsp+10],rbp
 mov qword ptr ss:[rsp+18],rsi
