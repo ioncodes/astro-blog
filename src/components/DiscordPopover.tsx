@@ -11,7 +11,7 @@ interface DiscordPopoverProps {
 
 export default function DiscordPopover({
   username = "@layle22",
-  className = "text-muted-foreground hover:text-primary transition-colors p-2 rounded-md hover:bg-accent cursor-pointer",
+  className = "text-muted-foreground social-button p-2 rounded-md hover:bg-accent cursor-pointer",
   iconSize = "small"
 }: DiscordPopoverProps) {
   return (
