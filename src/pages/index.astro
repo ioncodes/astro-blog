@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar.astro";
 import ProfileAvatar from "@/components/ProfileAvatar.tsx";
 import DiscordPopover from "@/components/DiscordPopover.tsx";
 import Footer from "@/components/Footer.astro";
+import ThemeScript from "@/components/ThemeScript.astro";
 
 const allPosts = await Astro.glob("./posts/*.md");
 
@@ -28,13 +29,14 @@ const emojis = ["👹", "👺", "👻", "💣", "🧠", "👀", "🐙", "🐧", 
 const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
 ---
 
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Layle's Lair</title>
+    <ThemeScript />
   </head>
 
   <body>

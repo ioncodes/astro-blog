@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card.tsx";
 import { Badge } from "@/components/ui/badge.tsx";
 import Footer from "@/components/Footer.astro";
+import ThemeScript from "@/components/ThemeScript.astro";
 
 const projects = [
   {
@@ -66,13 +67,14 @@ const projects = [
 ];
 ---
 
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Projects - Layle's Lair</title>
+    <ThemeScript />
   </head>
 
   <body>

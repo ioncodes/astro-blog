@@ -1,0 +1,42 @@
+---
+// This script runs before hydration to prevent theme flashing
+---
+
+<script is:inline>
+  // Set initial theme before page loads to prevent flash
+  (function() {
+    const savedTheme = localStorage.getItem("theme");
+    const theme = savedTheme || "dark"; // Default to dark theme
+
+    document.documentElement.className = theme;
+
+    // Update prose classes based on theme
+    function updateProseClasses() {
+      const proseElements = document.querySelectorAll('.prose');
+      proseElements.forEach(element => {
+        if (document.documentElement.className === 'dark') {
+          element.classList.add('prose-invert');
+        } else {
+          element.classList.remove('prose-invert');
+        }
+      });
+    }
+
+    // Run on initial load
+    document.addEventListener('DOMContentLoaded', updateProseClasses);
+
+    // Listen for theme changes
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          updateProseClasses();
+        }
+      });
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  })();
+</script>
