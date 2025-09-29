@@ -1,0 +1,54 @@
+[
+  {
+    "id": "ayyboy-advance",
+    "name": "ayyboy-advance",
+    "description": "A GameBoy Advance emulator with an elaborate CPU and GPU debugger as well as Rhai scripting support.",
+    "language": "Rust",
+    "category": "Emulation",
+    "image": "/projects/ayyboy-advance.png",
+    "url": "https://github.com/ioncodes/ayyboy-advance"
+  },
+  {
+    "id": "ayyboy",
+    "name": "ayyboy",
+    "description": "A classic GameBoy (DMG) and GameBoy Color (GBC) emulator including a basic debugger.",
+    "language": "Rust",
+    "category": "Emulation",
+    "image": "/projects/ayyboy.png",
+    "url": "https://github.com/ioncodes/ayyboy"
+  },
+  {
+    "id": "gg",
+    "name": "gg",
+    "description": "A GameGear and partial Sega Master System emulator with a built-in debugger.",
+    "language": "Rust",
+    "category": "Emulation",
+    "image": "/projects/gg.png",
+    "url": "https://github.com/ioncodes/gg"
+  },
+  {
+    "id": "ceload",
+    "name": "ceload",
+    "description": "A Bring Your Own Vulnerable Driver tool that allows you to load dbg64.sys and access a plethora of privileged functions.",
+    "language": "C++",
+    "category": "Research",
+    "image": "/projects/ceload.png",
+    "url": "https://github.com/ioncodes/ceload"
+  },
+  {
+    "id": "idacode",
+    "name": "idacode",
+    "description": "An integration for HexRay's IDA and VS Code which connects both to easily execute and debug IDAPython scripts.",
+    "language": "Python & TypeScript",
+    "category": "Research",
+    "url": "https://github.com/ioncodes/idacode"
+  },
+  {
+    "id": "silentload",
+    "name": "SilentLoad",
+    "description": "Loads a driver through NtLoadDriver by setting up the service registry key directly. To be used in engagement for BYOVD, where service creation creates an alert.",
+    "language": "C++",
+    "category": "Research",
+    "url": "https://github.com/ioncodes/SilentLoad"
+  }
+]

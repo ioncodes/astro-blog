@@ -16,7 +16,7 @@ export interface Props {
 const { post, isSticky = false } = Astro.props;
 ---
 
-<a href={post.url} class="block group">
+<a href={`/posts/${post.id}`} class="block group">
   <Card
     className="transition-all duration-200 hover:shadow-lg hover:scale-[1.02] cursor-pointer relative"
   >
@@ -29,29 +29,29 @@ const { post, isSticky = false } = Astro.props;
       <CardTitle
         className="group-hover:text-violet-400 transition-colors text-xl"
       >
-        {post.frontmatter.title || "Untitled"}
+        {post.data.title || "Untitled"}
       </CardTitle>
       {
-        post.frontmatter.summary && (
-          <CardDescription>{post.frontmatter.summary}</CardDescription>
+        post.data.summary && (
+          <CardDescription>{post.data.summary}</CardDescription>
         )
       }
       {
-        post.frontmatter.date && (
+        post.data.date && (
           <CardDescription className="text-sm text-gray-500">
-            {new Date(post.frontmatter.date).toLocaleDateString("en-US", {
+            {new Date(post.data.date).toLocaleDateString("en-US", {
               year: "numeric",
               month: "long",
               day: "numeric",
             })}
-            · {post.frontmatter.author}
+            · {post.data.author}
           </CardDescription>
         )
       }
       {
-        post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
+        post.data.tags && post.data.tags.length > 0 && (
           <div class="flex flex-wrap gap-2 mt-2">
-            {post.frontmatter.tags.map((tag: string) => (
+            {post.data.tags.map((tag: string) => (
               <Badge variant="outline">{tag}</Badge>
             ))}
           </div>
