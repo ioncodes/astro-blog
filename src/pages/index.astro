@@ -33,6 +33,23 @@ const sortedNonStickyPosts = nonStickyPosts.sort(sortByDate);
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>Layle's Lair</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="A place where a man gone mad gets to share his chaotic thoughts." />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Layle's Lair" />
+    <meta property="og:description" content="A place where a man gone mad gets to share his chaotic thoughts." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:site_name" content="Layle's Lair" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Layle's Lair" />
+    <meta name="twitter:description" content="A place where a man gone mad gets to share his chaotic thoughts." />
+    <meta name="twitter:creator" content="@layle_ctf" />
+
     <ThemeScript />
   </head>
 
