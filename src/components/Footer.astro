@@ -1,0 +1,21 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+  class="border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 mt-auto"
+>
+  <div class="max-w-4xl mx-auto px-4 py-6">
+    <div class="text-center text-sm text-muted-foreground">
+      © {currentYear} Layle's Lair · Made with ❤️ using
+      <a
+        href="https://astro.build"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-primary hover:text-primary/80 transition-colors font-medium"
+      >
+        Astro
+      </a>
+    </div>
+  </div>
+</footer>

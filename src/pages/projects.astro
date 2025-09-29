@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import Navbar from "@/components/Navbar.tsx";
+import Navbar from "@/components/Navbar.astro";
 import {
   Card,
   CardHeader,
@@ -8,6 +8,7 @@ import {
   CardDescription,
 } from "@/components/ui/card.tsx";
 import { Badge } from "@/components/ui/badge.tsx";
+import Footer from "@/components/Footer.astro";
 
 const projects = [
   {
@@ -75,7 +76,7 @@ const projects = [
   </head>
 
   <body>
-    <Navbar client:load />
+    <Navbar />
 
     <div class="max-w-4xl mx-auto px-4 py-8">
       <h1 class="text-4xl font-bold mb-6">Projects</h1>
@@ -146,5 +147,7 @@ const projects = [
         </a>
       </div>
     </div>
+
+    <Footer />
   </body>
 </html>
